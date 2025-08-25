@@ -1,0 +1,166 @@
+// Typography
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+.h {
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    color: $headings-color;
+    font-family: United Sans Cond;
+    line-height: 100%;
+    transition: all .3s ease;
+}
+
+h1,
+.h1 {
+    font-size: var(--step-h1);
+}
+
+h2,
+.h2 {
+    font-size: var(--step-h2);
+    letter-spacing: 3px;
+
+    @include media ("<tablet") {
+        letter-spacing: 1.5px;
+    }
+}
+
+h3,
+.h3 {
+    font-size: var(--step-h3);
+}
+
+h4,
+.h4 {
+    font-size: var(--step-h4);
+    letter-spacing: 1px;
+}
+
+h5,
+.h5 {
+    font-size: var(--step-h5);
+}
+
+h6,
+.h6 {
+    font-size: $h6-font-size;
+}
+
+p {
+    margin: 0;
+    font-family: Adobe Caslon Pro;
+}
+
+a {
+    color: $base-link-color;
+    text-decoration: none;
+    transition: color .3s ease;
+
+    &:hover,
+    &:focus {
+        color: $red;
+        transition: color .3s ease;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: $red;
+    color: $white;
+    font-family: United Sans;
+    @include adaptive-value("font-size", 18, 16, 1);
+    letter-spacing: 1px;
+    line-height: 1;
+    min-width: 13.5rem;
+    padding: 16px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all .167s ease;
+
+    &:not(.outlined, .dark, [disabled]):before {
+        background: transparent;
+        border-bottom: 1px solid $red;
+        border-right: 1px solid $red;
+        content: "";
+        display: block;
+        height: calc(100% + 2px);
+        left: 1px;
+        opacity: 0;
+        position: absolute;
+        top: 1px;
+        transform: translate(-3px, -3px);
+        transition: all .167s ease;
+        width: calc(100% + 2px);
+    }
+
+    &:hover {
+        &:not(.outlined, .dark, [disabled]):hover:before {
+            opacity: 1;
+            transform: translate(0);
+            transition: all .167s ease;
+        }
+    }
+}
+
+.italic {
+    font-style: italic;
+}
+
+.base-link {
+    display: inline-block;
+    width: max-content;
+    font-family: United Sans Cond;
+    text-transform: uppercase;
+    color: $red;
+    position: relative;
+    padding-bottom: 0.125rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        background-color: $red;
+        transition: width .3s ease;
+    }
+
+    &:hover {
+        &::after {
+            transition: width .3s ease;
+            width: 100%;
+        }
+    }
+}

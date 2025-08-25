@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bobby Hotel</title>
+  <link rel="stylesheet" href="/styles/main.scss">
+  <script type="module" src="/js/main.js" defer></script>
+</head>
+
+<body>
+  {{> header }}
+  <main>
+    <section class="hero">
+      <picture class="hero_bg">
+        <source srcset="./images/content/hero_img_mob.webp" media="(max-width:560px)">
+        <img src="./images/content/hero_img.webp" alt="image not found">
+      </picture>
+      <div class="hero_text">
+        <h1>Nashville</h1>
+        <p>Music City's Inspired Getaway</p>
+      </div>
+      <button type="button" class="btn open_booking" aria-label="Open Booking">Book</button>
+    </section>
+    <section class="content-components">
+      <div class="content">
+        <div class="image image_left">
+          <img src="./images/content/content_1.webp" alt="image not found">
+        </div>
+        <div class="image image_right">
+          <img src="./images/content/content_2.webp" alt="image not found">
+        </div>
+      </div>
+      <div class="crop_logo">
+        <img src="./images/crop_logo.webp" alt="image not found">
+      </div>
+    </section>
+    <section class="text-image rooms">
+      <div class="container">
+        <div class="text-image_content">
+          <div class="text-image_img">
+            <img class="inner_img" src="./images/content/content_3.webp" alt="image not found">
+            <img class="script" src="./images/inscriptions/script_1.webp" alt="image not found">
+          </div>
+          <div class="text-image_text">
+            <span class="section-label">Rooms</span>
+            <h2>Creative Rooms for Inspired Guests</h2>
+            <p>Make yourself at home in one of our 144 thoughtfully appointed guest rooms and
+              suites.</p>
+            <a href="#" class="btn">Browse Rooms</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="offers">
+      <div class="container">
+        <div class="offers_subhead">
+          <span class="subhead">Special Offers</span>
+        </div>
+        <div class="offers_content">
+          <a href="#" class="offers_item">
+            <div class="item_img">
+              <img src="./images/offers/offer_img_1.webp"
+                alt="Image of a woman in sitting on the seat of a Lincoln Towncar convertible looking at the viewer and taking a picture.">
+            </div>
+            <span class="section-label">Special Rate</span>
+            <h4>Music City Summer Getaway</h4>
+          </a>
+          <a href="#" class="offers_item">
+            <div class="item_img">
+              <img src="./images/offers/offer_img_2.webp"
+                alt="Image of a diverse group of people walking across a bridge with Nashville in the background, showcasing exploration..">
+            </div>
+            <span class="section-label">Special Rate</span>
+            <h4>Explore Nashville</h4>
+          </a>
+          <a href="#" class="offers_item">
+            <div class="item_img">
+              <img src="./images/offers/offer_img_3.webp"
+                alt="Image of a car parked in front of the Bobby Nashville hotel, suggesting that you valet your car.">
+            </div>
+            <span class="section-label">Special Rate</span>
+            <h4>Leave the Keys</h4>
+          </a>
+        </div>
+        <a href="#" class="btn">See All Offers</a>
+      </div>
+    </section>
+    <section class="promo">
+      <div class="promo_wrapper">
+        <span class="subhead">Happenings</span>
+        <ul class="promo_list">
+          <li class="promo_item active">
+            <a href="#" class="promo_item_link">
+              <div class="promo_item_content">
+                <h2>Backyard Sessions</h2>
+                <p>Summer Rooftop Music Series</p>
+                <img class="arrow" src="./images/svg/arrow_forward.svg" alt="arrow">
+              </div>
+              <img class="promo_item_img" src="./images/content/content_4.webp"
+                alt="Image of a rooftop concert with a large crowd.">
+            </a>
+          </li>
+          <li class="promo_item">
+            <a href="#" class="promo_item_link">
+              <div class="promo_item_content">
+                <h2>The Collection</h2>
+                <p>A Rotating Art Exhibition</p>
+                <img class="arrow" src="./images/svg/arrow_forward.svg" alt="arrow">
+              </div>
+              <img class="promo_item_img" src="./images/content/content_4.webp"
+                alt="Image of a rooftop concert with a large crowd.">
+            </a>
+          </li>
+          <li class="promo_item">
+            <a href="#" class="promo_item_link">
+              <div class="promo_item_content">
+                <h2>Dog-in-Residence</h2>
+                <p>Meet Our Four-Legged Friend</p>
+                <img class="arrow" src="./images/svg/arrow_forward.svg" alt="arrow">
+              </div>
+              <img class="promo_item_img" src="./images/content/content_4.webp"
+                alt="Image of a rooftop concert with a large crowd.">
+            </a>
+          </li>
+        </ul>
+        <div class="promo_image_group">
+          <div class="promo_img">
+            <img src="./images/content/content_4.webp"
+              alt="Image of a rooftop concert with a large crowd.">
+          </div>
+          <div class="promo_img">
+            <img src="./images/content/content_4.webp"
+              alt="Image of a rooftop concert with a large crowd.">
+          </div>
+          <div class="promo_img">
+            <img src="./images/content/content_4.webp"
+              alt="Image of a rooftop concert with a large crowd.">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="events">
+      <div class="container">
+        <div class="events_wrap">
+          <div class="events_subhead">
+            <img src="./images/svg/star.svg" alt="star icon">
+            <span class="subhead">Upcoming Events</span>
+          </div>
+          <div class="events_contnet">
+            <div class="events_item">
+              <div class="item_date">
+                <p>Aug 14</p>
+              </div>
+              <div class="item_link-wrap">
+                <a href="#" class="item_link">
+                  <div class="link_text">
+                    <p class="hidden">Aug 14</p>
+                    <h3>BRONCHO</h3>
+                    <p class="italic">with Wilby</p>
+                  </div>
+                  <img class="arrow" src="./images/svg/arrow_forward_red.svg" alt="red arrow icon">
+                </a>
+              </div>
+            </div>
+            <div class="events_item">
+              <div class="item_date">
+                <p>Aug 21</p>
+              </div>
+              <div class="item_link-wrap">
+                <a href="#" class="item_link">
+                  <div class="link_text">
+                    <p class="hidden">Aug 21</p>
+                    <h3>Samara Cyn</h3>
+                    <p class="italic">with Tim Gent & Isaia Huron</p>
+                  </div>
+                  <img class="arrow" src="./images/svg/arrow_forward_red.svg" alt="red arrow icon">
+                </a>
+              </div>
+            </div>
+            <div class="events_item">
+              <div class="item_date">
+                <p>Sep 4</p>
+              </div>
+              <div class="item_link-wrap">
+                <a href="#" class="item_link">
+                  <div class="link_text">
+                    <p class="hidden" p>Sep 4</p>
+                    <h3>Mon Rovîa</h3>
+                    <p class="italic">with Jarren Blair</p>
+                  </div>
+                  <img class="arrow" src="./images/svg/arrow_forward_red.svg" alt="red arrow icon">
+                </a>
+              </div>
+            </div>
+            <div class="events_item">
+              <div class="item_date">
+                <p>Sep 11</p>
+              </div>
+              <div class="item_link-wrap">
+                <a href="#" class="item_link">
+                  <div class="link_text">
+                    <p class="hidden">Sep 11</p>
+                    <h3>Lone Star Shindig 2025</h3>
+                    <p class="italic">Texas Sounds Hit Nashville</p>
+                  </div>
+                  <img class="arrow" src="./images/svg/arrow_forward_red.svg" alt="red arrow icon">
+                </a>
+              </div>
+            </div>
+            <div class="events_item">
+              <div class="item_date">
+                <p>Sep 18</p>
+              </div>
+              <div class="item_link-wrap">
+                <a href="#" class="item_link">
+                  <div class="link_text">
+                    <p class="hidden">Sep 18</p>
+                    <h3>Bartees Strange</h3>
+                    <p class="italic">with Venus & the Flytraps</p>
+                  </div>
+                  <img class="arrow" src="./images/svg/arrow_forward_red.svg" alt="red arrow icon">
+                </a>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="events_link base-link ">See All Events</a>
+        </div>
+      </div>
+    </section>
+    <section class="slider">
+      <span class="subhead">Food + Drink</span>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="slide-inner">
+              <a href="#">
+                <img src="./images/content/swiper_img_1.webp"
+                  alt="Image of a dive bar with string lights and neon sign at Bobby Nashville.">
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide-inner">
+              <a href="#">
+                <img src="./images/content/swiper_img_2.webp"
+                  alt="Image of friends dining in Union Tavern, a restaurant at Bobby Nashville.">
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide-inner">
+              <a href="#">
+                <img src="./images/content/swiper_img_3.webp"
+                  alt="Image of Rooftop Lounge's bar at Bobby Nashville. A rooftop bar.">
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide-inner">
+              <a href="#">
+                <img src="./images/content/swiper_img_1.webp"
+                  alt="Image of a dive bar with string lights and neon sign at Bobby Nashville.">
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide-inner">
+              <a href="#">
+                <img src="./images/content/swiper_img_2.webp"
+                  alt="Image of friends dining in Union Tavern, a restaurant at Bobby Nashville.">
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide-inner">
+              <a href="#">
+                <img src="./images/content/swiper_img_3.webp"
+                  alt="Image of Rooftop Lounge's bar at Bobby Nashville. A rooftop bar.">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev">
+          <img src="./images/svg/prev.svg" alt="image not found">
+        </div>
+        <div class="swiper-button-next">
+          <img src="./images/svg/next.svg" alt="image not found">
+        </div>
+      </div>
+    </section>
+    <section class="text-image journal">
+      <div class="container">
+        <div class="text-image_content">
+          <div class="text-image_img">
+            <img class="inner_img" src="./images/content/content_5.webp" alt="image not found">
+            <img class="script" src="./images/inscriptions/script_2.webp" alt="image not found">
+          </div>
+          <div class="text-image_text">
+            <span class="section-label">Journal</span>
+            <h2>Artist Profile: Tim Gent</h2>
+            <p>Hip-Hop/Rap</p>
+            <a href="#" class="btn">Read the Story</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  {{> footer}}
+</body>
+
+</html>
