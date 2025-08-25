@@ -591,3 +591,131 @@
         }
     }
 }
+
+.rooms {
+    margin-top: 5vw;
+    margin-bottom: var(--space-75p);
+
+    .container {
+        width: 85vw;
+    }
+
+    &_filter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include adaptive-value("gap", 30, 16, 1);
+        margin-bottom: var(--space-5p);
+    }
+
+    .filter_button {
+        font-weight: 600;
+        // letter-spacing: 1px;
+
+        &.active {
+            color: $red;
+            border-bottom: 1px solid $red
+        }
+    }
+
+    &_list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-75p);
+        position: relative;
+        overflow: hidden;
+
+        @include media ("<tablet") {
+            grid-template-columns: 1fr;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 100%;
+            width: 1px;
+            background-color: #D7D7D7;
+
+            @include media ("<tablet") {
+                display: none;
+            }
+        }
+
+        @include media (">widescreen_x") {
+            gap: var(--space-10p);
+        }
+    }
+
+    &_item {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-s-m);
+        min-height: 100%;
+        position: relative;
+
+        &:not(:last-child) {
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: calc(-1 * var(--space-75p) / 2);
+                width: 125%;
+                height: 1px;
+                background: #D7D7D7;
+
+                @include media ("<tablet") {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .item {
+
+        &_img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 2;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                transition: transform .5s ease;
+            }
+
+            &.hovered {
+                position: relative;
+
+                .tour-icon {
+                    position: absolute;
+                    right: 20px;
+                    right: var(--space-xs-s);
+                    bottom: var(--space-xs-s);
+                    width: 5rem;
+                    height: auto;
+                }
+
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                        transition: transform .5s ease;
+                    }
+                }
+            }
+        }
+
+        &_title {
+            font-size: var(--step-h3);
+        }
+
+        &_descr {
+            @include adaptive-value("font-size", 22, 18, 1);
+            margin-bottom: auto;
+        }
+    }
+
+
+}

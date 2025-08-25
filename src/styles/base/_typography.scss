@@ -96,7 +96,7 @@ button {
     align-items: center;
     justify-content: center;
     background: $red;
-    color: $white;
+    color: $white !important;
     font-family: United Sans;
     @include adaptive-value("font-size", 18, 16, 1);
     letter-spacing: 1px;
@@ -135,6 +135,7 @@ button {
 
 .italic {
     font-style: italic;
+    @include adaptive-value("font-size", 22, 18, 1);
 }
 
 .base-link {
