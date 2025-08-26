@@ -14,70 +14,9 @@
       </div>
       <button type="button" class="btn open_booking" aria-label="Open Booking">Book</button>
     </section>
-    <section class="content-components">
-      <div class="content">
-        <div class="image image_left">
-          <img src="./images/content/content_1.webp" alt="image not found">
-        </div>
-        <div class="image image_right">
-          <img src="./images/content/content_2.webp" alt="image not found">
-        </div>
-      </div>
-      <div class="crop_logo">
-        <img src="./images/crop_logo.webp" alt="image not found">
-      </div>
-    </section>
-    <section class="text-image rooms">
-      <div class="container">
-        <div class="text-image_content">
-          <div class="text-image_img">
-            <img class="inner_img" src="./images/content/content_3.webp" alt="image not found">
-            <img class="script" src="./images/inscriptions/script_1.webp" alt="image not found">
-          </div>
-          <div class="text-image_text">
-            <span class="section-label">Rooms</span>
-            <h2>Creative Rooms for Inspired Guests</h2>
-            <p>Make yourself at home in one of our 144 thoughtfully appointed guest rooms and
-              suites.</p>
-            <a href="#" class="btn">Browse Rooms</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="offers">
-      <div class="container">
-        <div class="offers_subhead">
-          <span class="subhead">Special Offers</span>
-        </div>
-        <div class="offers_content">
-          <a href="#" class="offers_item">
-            <div class="item_img">
-              <img src="./images/offers/offer_img_1.webp"
-                alt="Image of a woman in sitting on the seat of a Lincoln Towncar convertible looking at the viewer and taking a picture.">
-            </div>
-            <span class="section-label">Special Rate</span>
-            <h4>Music City Summer Getaway</h4>
-          </a>
-          <a href="#" class="offers_item">
-            <div class="item_img">
-              <img src="./images/offers/offer_img_2.webp"
-                alt="Image of a diverse group of people walking across a bridge with Nashville in the background, showcasing exploration..">
-            </div>
-            <span class="section-label">Special Rate</span>
-            <h4>Explore Nashville</h4>
-          </a>
-          <a href="#" class="offers_item">
-            <div class="item_img">
-              <img src="./images/offers/offer_img_3.webp"
-                alt="Image of a car parked in front of the Bobby Nashville hotel, suggesting that you valet your car.">
-            </div>
-            <span class="section-label">Special Rate</span>
-            <h4>Leave the Keys</h4>
-          </a>
-        </div>
-        <a href="#" class="btn">See All Offers</a>
-      </div>
-    </section>
+    {{> content-components }}
+    {{> text-image}}
+    {{> offers }}
     <section class="promo">
       <div class="promo_wrapper">
         <span class="subhead">Happenings</span>
@@ -220,83 +159,8 @@
         </div>
       </div>
     </section>
-    <section class="slider">
-      <span class="subhead">Food + Drink</span>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="slide-inner">
-              <a href="#">
-                <img src="./images/content/swiper_img_1.webp"
-                  alt="Image of a dive bar with string lights and neon sign at Bobby Nashville.">
-              </a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="slide-inner">
-              <a href="#">
-                <img src="./images/content/swiper_img_2.webp"
-                  alt="Image of friends dining in Union Tavern, a restaurant at Bobby Nashville.">
-              </a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="slide-inner">
-              <a href="#">
-                <img src="./images/content/swiper_img_3.webp"
-                  alt="Image of Rooftop Lounge's bar at Bobby Nashville. A rooftop bar.">
-              </a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="slide-inner">
-              <a href="#">
-                <img src="./images/content/swiper_img_1.webp"
-                  alt="Image of a dive bar with string lights and neon sign at Bobby Nashville.">
-              </a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="slide-inner">
-              <a href="#">
-                <img src="./images/content/swiper_img_2.webp"
-                  alt="Image of friends dining in Union Tavern, a restaurant at Bobby Nashville.">
-              </a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="slide-inner">
-              <a href="#">
-                <img src="./images/content/swiper_img_3.webp"
-                  alt="Image of Rooftop Lounge's bar at Bobby Nashville. A rooftop bar.">
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-button-prev">
-          <img src="./images/svg/prev.svg" alt="image not found">
-        </div>
-        <div class="swiper-button-next">
-          <img src="./images/svg/next.svg" alt="image not found">
-        </div>
-      </div>
-    </section>
-    <section class="text-image journal">
-      <div class="container">
-        <div class="text-image_content">
-          <div class="text-image_img">
-            <img class="inner_img" src="./images/content/content_5.webp" alt="image not found">
-            <img class="script" src="./images/inscriptions/script_2.webp" alt="image not found">
-          </div>
-          <div class="text-image_text">
-            <span class="section-label">Journal</span>
-            <h2>Artist Profile: Tim Gent</h2>
-            <p>Hip-Hop/Rap</p>
-            <a href="#" class="btn">Read the Story</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    {{> slider}}
+    {{> text-image}}
   </main>
   {{> footer}}
 </body>
