@@ -492,7 +492,8 @@
         grid-column: span 2 / span 2;
 
         @include media ("<tablet") {
-            border: none
+            border: none;
+            padding: 0;
         }
 
         .arrow {
@@ -661,7 +662,7 @@
                 position: absolute;
                 left: 0;
                 bottom: calc(-1 * var(--space-75p) / 2);
-                width: 125%;
+                width: 60vw;
                 height: 1px;
                 background: #D7D7D7;
 
@@ -849,5 +850,100 @@
         @include media ("<desktop") {
             order: 3;
         }
+    }
+}
+
+.places {
+    margin-top: var(--space-75p);
+    margin-bottom: var(--space-75p);
+
+    @include media ("<phone") {
+        margin: 60px 0;
+    }
+
+    &_content {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-10p);
+        position: relative;
+        overflow: hidden;
+
+        @include media ("<tablet") {
+            grid-template-columns: 1fr;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            background-color: #D7D7D7;
+
+            @include media ("<tablet") {
+                display: none;
+            }
+        }
+    }
+
+    &_item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-s-m);
+        text-align: center;
+
+        &:not(:last-child) {
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: calc(-1 * var(--space-75p) / 2);
+                width: 60vw;
+                height: 1px;
+                background: #D7D7D7;
+
+                @include media ("<tablet") {
+                    display: none;
+                }
+            }
+        }
+
+        &:hover {
+            .item_img {
+                img {
+                    transform: scale(1.1);
+                    transition: transform .5s ease;
+                }
+            }
+
+            h3 {
+                color: $red;
+                transition: color .5s ease;
+            }
+        }
+
+        h3 {
+            transition: color .5s ease;
+        }
+    }
+
+    .item_img {
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+
+        img {
+            transition: transform .5s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .item_text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3xs-2xs);
     }
 }
