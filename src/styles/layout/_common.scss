@@ -33,9 +33,83 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: hidden;
+    background-color: #151515;
 
-    @include media ("<phone_x") {
+    @include media ("<desktop") {
         height: 600px;
+    }
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 2fr;
+        column-gap: 10vw;
+        height: -moz-fit-content;
+        height: fit-content;
+        left: 50%;
+        max-height: 100dvh;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        z-index: 10;
+
+        @include media ("<desktop") {
+            column-gap: 20vw;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 0;
+        }
+    }
+
+    .image-column {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    .image-column-1 {
+        margin-left: -5vw;
+        padding-bottom: 7.5vw;
+        padding-top: 7vw;
+
+        @include media ("<desktop") {
+            align-items: flex-start !important;
+            grid-column: 1 / 3;
+            margin-left: 7.5vw;
+            padding-bottom: 5vw;
+            padding-top: 12vw;
+        }
+    }
+
+    .image-column-2 {
+        padding-top: 5vw;
+        row-gap: 10vw;
+
+        @include media ("<desktop") {
+            padding-top: 10vw;
+            row-gap: 15vw;
+        }
+    }
+
+    .image-column-3 {
+        padding-right: 3.75vw;
+        row-gap: 10vw;
+
+        @include media ("<desktop") {
+            margin-top: -21vw;
+            padding-top: 5vw;
+        }
+    }
+
+    .image-grid-wrap {
+        max-width: 20vw;
+
+        @include media ("<desktop") {
+            max-width: 32.5vw;
+        }
     }
 
     &::before {
@@ -45,7 +119,7 @@
         width: 100%;
         height: 100%;
         background: #15151599;
-        z-index: -1;
+        z-index: 15;
     }
 
     &_bg {
@@ -53,7 +127,7 @@
         inset: 0;
         width: 100%;
         height: 100%;
-        z-index: -2;
+        z-index: 13;
 
         img {
             width: 100%;
@@ -69,6 +143,9 @@
         align-items: center;
         text-align: center;
         height: 100%;
+        width: 100%;
+        position: relative;
+        z-index: 30;
     }
 
     &_text {
