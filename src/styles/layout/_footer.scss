@@ -71,6 +71,12 @@
 
         a {
             font-family: Adobe Caslon Pro;
+            transition: color .3s ease;
+
+            &:hover {
+                color: $red;
+                transition: color .3s ease;
+            }
         }
     }
 
@@ -134,6 +140,13 @@
         a {
             font-family: Adobe Caslon Pro;
             white-space: nowrap;
+
+            transition: color .3s ease;
+
+            &:hover {
+                color: $red;
+                transition: color .3s ease;
+            }
         }
     }
 
@@ -153,8 +166,17 @@
             line-height: 125%;
         }
 
+        a {
+            transition: color .3s ease;
+
+            &:hover {
+                color: $red;
+                transition: color .3s ease;
+            }
+        }
+
         @include media ("<phone") {
-            p{
+            p {
                 width: 100%;
             }
         }
