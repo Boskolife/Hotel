@@ -1,0 +1,66 @@
+{{> head}}
+
+<body>
+    {{> header }}
+    <main>
+        <section class="hero">
+            <picture class="hero_bg">
+                <source srcset="./images/content/hero_img_mob.webp" media="(max-width:560px)">
+                <img src="./images/content/hero_img.webp" alt="image not found">
+            </picture>
+            <div class="hero_content">
+                <div class="hero_text">
+                    <h1>Happenings</h1>
+                    <p>Concerts, Art Exhibitions, and More</p>
+                </div>
+            </div>
+        </section>
+        <section class="places">
+            <div class="container">
+                <div class="places_content">
+                    <a href="collection.html" class="places_item">
+                        <div class="item_img">
+                            <img src="./images/content/content_8.webp" alt="image not found">
+                        </div>
+                        <div class="item_text">
+                            <h3>The collection</h3>
+                            <p>A Rotating Public Art Exhibit</p>
+                        </div>
+                    </a>
+                    <a href="dog-in-residence.html" class="places_item">
+                        <div class="item_img">
+                            <img src="./images/content/content_9.webp" alt="image not found">
+                        </div>
+                        <div class="item_text">
+                            <h3>DOG-IN-RESIDENCE</h3>
+                            <p>Bobby Nashville’s Lobby Dog</p>
+                        </div>
+                    </a>
+                    <a href="backyard-sessions.html" class="places_item">
+                        <div class="item_img">
+                            <img src="./images/content/content_10.webp" alt="image not found">
+                        </div>
+                        <div class="item_text">
+                            <h3>BACKYARD SESSIONS</h3>
+                            <p>Rooftop Summer Music Series</p>
+                        </div>
+                    </a>
+                    <a href="#" class="places_item">
+                        <div class="item_img">
+                            <img src="./images/content/content_11.webp" alt="image not found">
+                        </div>
+                        <div class="item_text">
+                            <h3>ROOFTOP DINKVILLE PICKLEBALL</h3>
+                            <p>Nashville’s Only Rooftop Court</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        {{> events}}
+        {{> slider}}
+    </main>
+    {{> footer}}
+</body>
+
+</html>

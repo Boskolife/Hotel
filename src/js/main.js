@@ -2,11 +2,11 @@ import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 
 window.addEventListener('load', () => {
-  footerNavListenerResize();
+  ListenerResize();
 });
 
 window.addEventListener('resize', () => {
-  footerNavListenerResize();
+  ListenerResize();
 });
 
 new Swiper('.swiper', {
@@ -42,12 +42,15 @@ new Swiper('.swiper', {
   },
 });
 
-function footerNavListenerResize() {
-  const footerNav = document.querySelector('.footer_nav_menu');
-  if (!footerNav) return;
-  if (window.innerWidth < footerNav.scrollWidth) {
-    footerNav.classList.add('resized');
-  } else {
-    footerNav.classList.remove('resized');
-  }
+function ListenerResize() {
+  const items = document.querySelectorAll('.scroll-element');
+  if (!items.length) return;
+
+  items.forEach((el) => {
+    if (window.innerWidth < el.scrollWidth) {
+      el.classList.add('resized');
+    } else {
+      el.classList.remove('resized');
+    }
+  });
 }

@@ -19,6 +19,7 @@ h6,
     color: $headings-color;
     font-family: United Sans Cond;
     line-height: 100%;
+    letter-spacing: .05em;
     transition: all .3s ease;
 }
 
@@ -30,11 +31,6 @@ h1,
 h2,
 .h2 {
     font-size: var(--step-h2);
-    letter-spacing: 3px;
-
-    @include media ("<tablet") {
-        letter-spacing: 1.5px;
-    }
 }
 
 h3,
@@ -45,7 +41,6 @@ h3,
 h4,
 .h4 {
     font-size: var(--step-h4);
-    letter-spacing: 1px;
 }
 
 h5,
@@ -149,6 +144,7 @@ button {
     color: $red;
     position: relative;
     padding-bottom: 0.125rem;
+    font-weight: 600;
 
     &::after {
         content: '';
