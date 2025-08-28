@@ -1,0 +1,28 @@
+{{> head}}
+
+<body>
+  {{> header }}
+  <main>
+    <section class="hero">
+      <picture class="hero_bg">
+        <source srcset="./images/content/hero_img_mob.webp" media="(max-width:560px)">
+        <img src="./images/content/hero_img.webp" alt="image not found">
+      </picture>
+      <div class="hero_content">
+        <div class="hero_text">
+          <h1>Meetings + Events</h1>
+          <p>Meetings + Events at Bobby Nashville</p>
+        </div>
+
+      </div>
+    </section>
+    {{> text}}
+    {{> content-components }}
+    {{> text-image}}
+    {{> text-image}}
+    {{> slider}}
+  </main>
+  {{> footer}}
+</body>
+
+</html>
