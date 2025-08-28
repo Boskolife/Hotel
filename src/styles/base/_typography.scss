@@ -55,7 +55,9 @@ h6,
 
 p {
     margin: 0;
-    font-family: Adobe Caslon Pro;
+    font-family: "adobe-caslon-pro", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 a {
@@ -132,6 +134,7 @@ button {
 }
 
 .italic {
+
     font-style: italic;
     @include adaptive-value("font-size", 22, 18, 1);
 }

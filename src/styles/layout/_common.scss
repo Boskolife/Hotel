@@ -9,11 +9,12 @@
 }
 
 .section-label {
+    font-family: "adobe-caslon-pro", serif;
+    font-weight: 400;
+    font-style: italic;
     display: inline-block;
     color: $red;
     @include adaptive-value("font-size", 22, 18, 1);
-    font-style: italic;
-    font-family: "Adobe Caslon Pro";
     @include adaptive-value("margin-bottom", 20, 12, 1);
 }
 
@@ -483,7 +484,7 @@
 
             .item_img {
                 img {
-                    scale: 1.1;
+                    transform: scale(1.1)
                 }
             }
         }

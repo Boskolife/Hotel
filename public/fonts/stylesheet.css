@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'United Sans Cd Bd';
+    src: url('UnitedSansCond-Bold.eot');
+    src: url('UnitedSansCond-Bold.eot?#iefix') format('embedded-opentype'),
+        url('UnitedSansCond-Bold.woff2') format('woff2'),
+        url('UnitedSansCond-Bold.woff') format('woff'),
+        url('UnitedSansCond-Bold.ttf') format('truetype'),
+        url('UnitedSansCond-Bold.svg#UnitedSansCond-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
