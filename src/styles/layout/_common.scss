@@ -772,20 +772,9 @@
 }
 
 .calendar {
-    padding-top: var(--space-nav-height);
+    margin-top: 0;
     margin-bottom: var(--space-75p);
 
-    .events_head {
-        text-align: center;
-        width: 70vw;
-        margin: 0 auto;
-        margin-top: var(--space-75p);
-        margin-bottom: var(--space-375p);
-
-        @include media ("<tablet") {
-            width: 50vw;
-        }
-    }
 
     .events_filter {
         display: flex;
@@ -859,10 +848,10 @@
         align-items: flex-start;
         gap: var(--space-s-m);
 
-          @include media ("<tablet") {
-                flex-direction: row;
-                align-items: center;
-            }
+        @include media ("<tablet") {
+            flex-direction: row;
+            align-items: center;
+        }
 
         .btn {
             @include media ("<tablet") {
@@ -1624,5 +1613,18 @@
             height: 100%;
             object-fit: cover;
         }
+    }
+}
+
+.section-head {
+
+    text-align: center;
+    width: 70vw;
+    margin: 0 auto;
+    margin-top: var(--space-15p);
+    margin-bottom: var(--space-375p);
+
+    @include media ("<tablet") {
+        width: 50vw;
     }
 }
