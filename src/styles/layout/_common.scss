@@ -23,6 +23,7 @@
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
+    font-family: United Sans Cond;
 }
 
 .hero {
@@ -1690,5 +1691,31 @@
         flex-direction: column;
         gap: var(--space-2xs-xs);
     }
+}
 
+.not-found {
+    padding-top: var(--space-10p);
+
+    &_text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--space-s-m);
+        width: 50vw;
+        max-width: 720px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &_img {
+        max-width: 50rem;
+        width: 80vw;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
 }

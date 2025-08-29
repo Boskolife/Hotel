@@ -89,6 +89,7 @@ button {
     outline: none;
     background-color: transparent;
     padding: 0;
+
 }
 
 .btn {
@@ -106,6 +107,7 @@ button {
     position: relative;
     text-align: center;
     text-transform: uppercase;
+    font-family: United Sans Cond;
     transition: all .167s ease;
 
     &:not(.outlined, .dark, [disabled]):before {
