@@ -3,6 +3,7 @@ import { Navigation, EffectCreative } from 'swiper/modules';
 
 window.addEventListener('load', () => {
   ListenerResize();
+  RoomTabs();
 });
 
 window.addEventListener('resize', () => {
@@ -85,4 +86,34 @@ function ListenerResize() {
       el.classList.remove('resized');
     }
   });
+}
+
+function RoomTabs() {
+  const rooms = document.querySelectorAll('.rooms_item');
+  const roomTabButtons = document.querySelectorAll('.rooms_filter .filter_button');
+
+  for(let button of roomTabButtons) {
+    button.addEventListener('click', () => {
+
+      //change button active state
+      for(let tabButton of roomTabButtons){
+        tabButton.classList.remove('active');
+      }
+
+      button.classList.add('active');
+
+      //show/hide rooms
+      const type = button.innerText;
+      console.log(button.innerText);
+      for(let room of rooms) {
+        
+        if (room.dataset.type == type || type == 'All') {
+          room.style.display = 'flex';
+        }
+        else {
+          room.style.display = 'none';
+        }
+      }
+    });
+  }
 }
