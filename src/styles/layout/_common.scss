@@ -1902,14 +1902,15 @@
             }
 
             .article_button{
-                a.btn{
-                    width: fit-content;
-                }
 
                 &_block{
                     display: flex;
                     flex-direction: column;
                     gap: var(--space-xs-s);
+
+                    a.btn{
+                    width: fit-content;
+                }
                 }
 
                 &_subtitle{
