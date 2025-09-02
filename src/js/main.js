@@ -4,6 +4,7 @@ import { Navigation, EffectCreative } from 'swiper/modules';
 window.addEventListener('load', () => {
   ListenerResize();
   RoomTabs();
+  initHeaderMenu();
 });
 
 window.addEventListener('resize', () => {
@@ -114,6 +115,74 @@ function RoomTabs() {
           room.style.display = 'none';
         }
       }
+    });
+  }
+}
+function initHeaderMenu() {
+  const menuLinks = document.querySelectorAll('.header_menu .menu a');
+  const subMenus = document.querySelectorAll('.sub-menu');
+  const header = document.querySelector('#header');
+  const headerMenu = document.querySelector('.header_menu-wrap');
+  const burger = document.querySelector('.header_burger');
+  const closeBtn = document.querySelector('.close_btn');
+  const backdrop = document.querySelector('.backdrop');
+
+  if (!menuLinks.length || !subMenus.length || !header || !headerMenu) return;
+
+  menuLinks.forEach((link) => {
+    link.addEventListener('mouseenter', () => {
+      const target = link.dataset.target;
+
+      if (target) {
+        subMenus.forEach((sub) => {
+          sub.classList.toggle('active', sub.dataset.menu === target);
+        });
+      } else {
+        subMenus.forEach((sub) => sub.classList.remove('active'));
+      }
+    });
+  });
+
+  header.addEventListener('mouseleave', (e) => {
+    const toElement = e.relatedTarget;
+    if (!toElement || !header.contains(toElement)) {
+      subMenus.forEach((sub) => sub.classList.remove('active'));
+    }
+  });
+
+  if (burger) {
+    burger.addEventListener('click', () => {
+      headerMenu.classList.add('open');
+      backdrop.classList.add('show');
+      document.body.classList.add('lock');
+    });
+  }
+
+  if (backdrop) {
+    backdrop.addEventListener('click', () => {
+      headerMenu.classList.remove('open');
+      backdrop.classList.remove('show');
+      document.body.classList.remove('lock');
+    });
+  }
+
+  const backButtons = document.querySelectorAll('.sub-menu .close_btn');
+  backButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const currentSubMenu = btn.closest('.sub-menu');
+      if (currentSubMenu) {
+        currentSubMenu.classList.remove('active');
+      }
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      headerMenu.classList.remove('open');
+      backdrop.classList.remove('show');
+      document.body.classList.remove('lock');
+      subMenus.forEach((sub) => sub.classList.remove('active'));
     });
   }
 }

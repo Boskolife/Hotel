@@ -106,4 +106,224 @@
             }
         }
     }
+
+    &_menu-wrap {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 11;
+        height: 100dvh;
+        width: 30vw;
+        transition: all .75s ease;
+
+        @include media ("<desktop") {
+            width: 75%;
+        }
+
+        &.open {
+            left: 0;
+            transition: all .75s ease;
+        }
+    }
+
+    &_menu {
+        align-items: flex-start;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        height: 100dvh;
+        left: 0;
+        max-width: 34.375rem;
+        padding-inline: var(--space-375p);
+        padding-bottom: var(--space-375p);
+        padding-top: var(--space-m-l);
+        position: absolute;
+        row-gap: var(--space-m-l);
+        top: 0;
+        width: 100%;
+        z-index: 10;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        scrollbar-width: 0;
+
+        .close_btn {
+            width: 20px;
+            height: 20px;
+
+            svg {
+                width: 100%;
+                height: 100%;
+                stroke: $red;
+            }
+        }
+
+        .section-label {
+            font-family: United Sans Cond;
+            text-transform: uppercase;
+            font-size: var(--step-cta);
+            font-style: normal;
+            letter-spacing: .05em;
+            margin: 0;
+        }
+
+        .info-block {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3xs-2xs);
+            margin-top: auto;
+
+            a {
+                transition: $animation-speed;
+
+                &:hover {
+                    color: $red;
+                    transition: $animation-speed;
+                }
+            }
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3xs-2xs);
+            position: relative;
+            z-index: 10;
+
+            a {
+                font-family: United Sans Cond;
+                text-transform: uppercase;
+                font-size: var(--step-h4);
+                transition: $animation-speed;
+
+                &:hover {
+                    color: $red;
+                    transition: $animation-speed;
+                }
+            }
+        }
+
+    }
+
+    .sub-menu {
+        height: 100dvh;
+        left: 0;
+        max-width: 34.375rem;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 9;
+        align-items: flex-start;
+        background-color: $white;
+        border-left: 1px solid $gray;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding-inline: var(--space-375p);
+        padding-bottom: var(--space-375p);
+        padding-top: var(--space-m-l);
+        row-gap: var(--space-m-l);
+        transition: all .75s ease;
+
+        @include media ("<desktop") {
+            left: -100%;
+            z-index: 11;
+        }
+
+        &.active {
+            left: 30vw;
+            transition: all .75s ease;
+
+            @include media ("<desktop") {
+                left: 0;
+
+            }
+        }
+
+        .close_btn {
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            font-family: United Sans Cond;
+            letter-spacing: .05em;
+            line-height: 1;
+            text-transform: uppercase;
+            color: $red;
+            font-size: var(--step-cta);
+
+            svg {
+                width: 16px;
+                height: 16px;
+                margin-right: var(--space-4xs-3xs);
+                fill: $red;
+            }
+
+            span {
+                margin-top: 3px;
+            }
+
+            @include media ("<desktop") {
+                opacity: 1;
+            }
+        }
+
+        .section-label {
+            color: $black;
+            font-family: United Sans Cond;
+            text-transform: uppercase;
+            font-size: var(--step-cta);
+            font-style: normal;
+            letter-spacing: .05em;
+            margin: 0;
+
+            @include media ("<desktop") {
+                color: $red;
+            }
+        }
+
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3xs-2xs);
+            position: relative;
+            z-index: 10;
+
+            a {
+                font-family: United Sans Cond;
+                text-transform: uppercase;
+                font-size: var(--step-h4);
+                transition: $animation-speed;
+
+                &:hover {
+                    color: $red;
+                    transition: $animation-speed;
+                }
+            }
+        }
+    }
+
+    .backdrop {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: #00000080;
+        z-index: -1;
+        opacity: 0;
+        transition: $animation-speed;
+        visibility: hidden;
+        pointer-events: none;
+
+        &.show {
+            opacity: 1;
+            z-index: 8;
+            transition: $animation-speed;
+            visibility: visible;
+            pointer-events: all;
+        }
+    }
 }
