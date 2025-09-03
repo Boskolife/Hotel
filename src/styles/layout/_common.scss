@@ -886,6 +886,7 @@
         position: relative;
         transition: color .3s ease;
         white-space: nowrap;
+        text-transform: uppercase;
 
         @include media ("<tablet") {
             &:first-of-type {
@@ -1055,6 +1056,7 @@
         letter-spacing: .05em;
         white-space: nowrap;
         font-family: United Sans Cond;
+        text-transform: uppercase;
 
         &::before {
             content: '';
