@@ -186,3 +186,26 @@ function initHeaderMenu() {
     });
   }
 }
+
+
+const select = document.querySelector(".form-select");
+  const selected = select.querySelector(".select-selected");
+  const items = select.querySelector(".select-items");
+
+  selected.addEventListener("click", () => {
+    items.classList.toggle("show");
+  });
+
+  items.querySelectorAll("div").forEach(option => {
+    option.addEventListener("click", () => {
+      selected.textContent = option.textContent;
+      selected.dataset.value = option.dataset.value;
+      items.classList.remove("show");
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!select.contains(e.target)) {
+      items.classList.remove("show");
+    }
+  });
