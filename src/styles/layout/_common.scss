@@ -1,3 +1,7 @@
+body {
+    line-height: 1.35;
+}
+
 .lock {
     overflow: hidden;
 }
@@ -1167,6 +1171,12 @@
         }
     }
 
+    .rooms_item_text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3xs-2xs);
+    }
+
     .item {
 
         &_img {
@@ -1208,6 +1218,10 @@
             @include adaptive-value("font-size", 22, 18, 1);
             margin-bottom: auto;
         }
+    }
+
+    .btn{
+        margin-top: auto;
     }
 }
 
