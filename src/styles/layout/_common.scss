@@ -2463,7 +2463,7 @@ a.button-soldout {
             display: flex;
             flex-direction: column;
             row-gap: var(--space-3xs-2xs);
-            width: 48%;
+            width: 47%;
 
             @include media ("<tablet") {
                 width: 100%;
