@@ -909,6 +909,7 @@
         transition: color .3s ease;
         white-space: nowrap;
         text-transform: uppercase;
+        font-family: United Sans Cond;
 
         @include media ("<tablet") {
             &:first-of-type {
