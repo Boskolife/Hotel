@@ -1220,7 +1220,7 @@ body {
         }
     }
 
-    .btn{
+    .btn {
         margin-top: auto;
     }
 }
@@ -1253,6 +1253,15 @@ body {
         }
     }
 
+    &_img {
+        aspect-ratio: 3 / 4;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
     .amenities_body {
         display: flex;
         flex-direction: column;
@@ -1276,8 +1285,6 @@ body {
             padding-inline: var(--space-xs-s);
             border: 1px solid $gray;
             position: relative;
-
-
 
             &:first-child {
 
