@@ -8,7 +8,7 @@
 
     @include media ("<tablet") {
         margin-inline: auto;
-        width: 85vw;
+        width: 90vw;
     }
 }
 
@@ -986,6 +986,10 @@
 
     .container {
         width: 85vw;
+
+        @include media ("<tablet") {
+            width: 90vw;
+        }
     }
 
     &_filter {
@@ -1024,6 +1028,7 @@
         transition: color .3s ease;
         letter-spacing: .05em;
         white-space: nowrap;
+        font-family: United Sans Cond;
 
         &::before {
             content: '';
@@ -1535,6 +1540,7 @@
         position: relative;
         transition: color .3s ease;
         letter-spacing: .05em;
+        font-family: United Sans Cond;
 
         &.resized {
             justify-content: flex-start;
