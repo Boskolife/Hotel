@@ -1826,6 +1826,7 @@
 }
 
 .article{
+
     &_breadcrumbs{
         letter-spacing: .05em;
         line-height: 1;
@@ -1854,6 +1855,17 @@
             position: relative;
             z-index: 10;
         }
+
+        &_credits{
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3xs-2xs);
+        }
+
+        &_date{
+            font-size: var(--step-caption);
+        }
+
         @include media ("<tablet") {
             grid-template-columns: repeat(1, minmax(0, 1fr));
 
@@ -2031,6 +2043,25 @@
     }
 }
 
+.article_table_of_contents {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-3xs-2xs);
+
+    a{
+        color: $red;
+        font-size: var(--step-caption);
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 1px;
+        transition: text-decoration-color .33s ease, color .33s ease;
+        width: fit-content;
+    }
+    a:hover{
+        text-decoration-color: $red;
+    }
+}
+
 .no-line-divider-wrap {
         position: relative;
         width: 100vw!important;
@@ -2042,4 +2073,8 @@
             border-top: 1px solid $gray;
             
         }
+    }
+
+ul.wp-block-list li{
+        list-style: disc;
     }
