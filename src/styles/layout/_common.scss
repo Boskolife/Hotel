@@ -2096,3 +2096,102 @@
 ul.wp-block-list li{
         list-style: disc;
     }
+
+.info_hero {
+    position: relative;
+    padding-top: var(--space-nav-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: transparent;
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        position: relative;
+        z-index: 30;
+        margin-top: var(--space-75p);
+    }
+
+    &_text {
+        width: 70vw;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        flex: 1 1 0%;
+
+        h1 {
+
+            color: $black;
+            letter-spacing: 3px;
+            @include adaptive-value("margin-bottom", 20, 12, 1);
+
+            @include media ("<tablet") {
+                letter-spacing: 2px;
+            }
+        }
+
+        p {
+            color: $black;
+            @include adaptive-value("font-size", 22, 18, 1);
+            line-height: calc(30 / 22);
+        }
+
+    }
+}
+
+.text-section{
+    a{
+        color: $red;
+        font-size: var(--step-caption);
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 1px;
+        transition: text-decoration-color .33s ease, color .33s ease;
+        width: fit-content;
+    }
+    a:hover{
+        text-decoration-color: $red;
+    }
+}
+
+.sitemap{
+    a{
+        color: $red;
+        font-size: var(--step-caption);
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 1px;
+        transition: text-decoration-color .33s ease, color .33s ease;
+        width: fit-content;
+    }
+    a:hover{
+        text-decoration-color: $red;
+    }
+
+    ul:not(.children){
+        -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+
+    @include media ("<tablet") {
+                -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+            }
+    }
+}
+
+.item_img img{
+    object-fit: cover;
+}
