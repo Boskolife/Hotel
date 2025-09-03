@@ -544,6 +544,11 @@
         margin-bottom: 0;
         opacity: 0;
         transition: all .3s ease;
+
+        @include media ("<tablet") {
+            opacity: 1;
+            grid-template-rows: 1fr;
+        }
     }
 
     .promo-group-caption-inner {
