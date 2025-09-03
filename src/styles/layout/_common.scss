@@ -1931,7 +1931,25 @@
                 }
             }
         }
+
+        a{
+            color: $red;
+            text-decoration: underline;
+            text-decoration-color: transparent;
+        }
+        a:hover{
+            text-decoration-color: $red;
+        }
     }
+
+    &_main_content{
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-s-m);
+        
+    }
+
+    
     
 }
 
