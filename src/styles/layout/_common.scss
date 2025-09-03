@@ -507,6 +507,7 @@
         height: auto;
         @include adaptive-value("margin-bottom", 20, 12, 1);
         overflow: hidden;
+        aspect-ratio: 3 / 4;
 
         img {
             width: 100%;
