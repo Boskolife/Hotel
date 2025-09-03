@@ -1,5 +1,4 @@
-
-.lock{
+.lock {
     overflow: hidden;
 }
 
@@ -186,6 +185,7 @@
             color: $white;
             @include adaptive-value("font-size", 22, 18, 1);
             line-height: calc(30 / 22);
+            font-style: italic;
         }
     }
 }
@@ -1405,6 +1405,14 @@
 
         ul {
             width: 100%;
+
+            &.other-font {
+                li {
+                    &:first-child {
+                        font-family: United Sans Cond;
+                    }
+                }
+            }
         }
 
         li {
@@ -1825,44 +1833,44 @@
     }
 }
 
-.article{
+.article {
 
-    &_breadcrumbs{
+    &_breadcrumbs {
         letter-spacing: .05em;
         line-height: 1;
     }
 
-    &_head{
+    &_head {
         margin-top: calc(var(--space-5p) + var(--space-nav-height));
-        
+
     }
 
-    &_info{
+    &_info {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: var(--space-75p);
         position: relative;
         overflow: hidden;
 
-        &_left_column{
+        &_left_column {
             padding-top: var(--space-75p);
             display: flex;
             flex-direction: column;
             gap: var(--space-s-m);
         }
 
-        &_featured_image{
+        &_featured_image {
             position: relative;
             z-index: 10;
         }
 
-        &_credits{
+        &_credits {
             display: flex;
             flex-direction: column;
             gap: var(--space-3xs-2xs);
         }
 
-        &_date{
+        &_date {
             font-size: var(--step-caption);
         }
 
@@ -1875,82 +1883,85 @@
         }
     }
 
-    &_content{
+    &_content {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: var(--space-75p);
         position: relative;
         overflow: hidden;
         margin-top: var(--space-5p);
+
         @include media ("<tablet") {
             grid-template-columns: repeat(1, minmax(0, 1fr));
         }
 
-        &_left_column{
+        &_left_column {
             display: flex;
             flex-direction: column;
             gap: var(--space-s-m);
 
-            p.intro{
-                    font-size: var(--step-intro);
+            p.intro {
+                font-size: var(--step-intro);
             }
 
-            .editorial_details{
+            .editorial_details {
                 display: flex;
                 flex-direction: column;
                 row-gap: var(--space-s-m);
                 margin-top: var(--space-s-m);
 
-                &_point{
-                    h4{
+                &_point {
+                    h4 {
                         font-size: var(--step-h5);
                         margin-bottom: var(--space-4xs-3xs);
                     }
-                    p{
+
+                    p {
                         font-size: var(--step-caption);
                     }
                 }
-                
+
             }
 
-            .article_button{
+            .article_button {
 
-                &_block{
+                &_block {
                     display: flex;
                     flex-direction: column;
                     gap: var(--space-xs-s);
 
-                    a.btn{
-                    width: fit-content;
-                }
+                    a.btn {
+                        width: fit-content;
+                    }
                 }
 
-                &_subtitle{
+                &_subtitle {
                     font-size: 1rem;
 
                 }
             }
         }
 
-        a{
+        a {
             color: $red;
             text-decoration: underline;
             text-decoration-color: transparent;
         }
-        a:hover{
+
+        a:hover {
             text-decoration-color: $red;
         }
     }
 
-    &_main_content{
+    &_main_content {
         display: flex;
         flex-direction: column;
         gap: var(--space-s-m);
-        
+
     }
 
-    
-    
+
+
 }
 
 .other_articles {
@@ -2066,7 +2077,7 @@
     flex-direction: column;
     row-gap: var(--space-3xs-2xs);
 
-    a{
+    a {
         color: $red;
         font-size: var(--step-caption);
         text-decoration: underline;
@@ -2075,27 +2086,28 @@
         transition: text-decoration-color .33s ease, color .33s ease;
         width: fit-content;
     }
-    a:hover{
+
+    a:hover {
         text-decoration-color: $red;
     }
 }
 
 .no-line-divider-wrap {
-        position: relative;
-        width: 100vw!important;
-        left: calc(var(--space-10p) * -1);
+    position: relative;
+    width: 100vw !important;
+    left: calc(var(--space-10p) * -1);
 
-        .divider {
-            display: block;
-            height: 15px;
-            border-top: 1px solid $gray;
-            
-        }
-    }
+    .divider {
+        display: block;
+        height: 15px;
+        border-top: 1px solid $gray;
 
-ul.wp-block-list li{
-        list-style: disc;
     }
+}
+
+ul.wp-block-list li {
+    list-style: disc;
+}
 
 .info_hero {
     position: relative;
@@ -2150,8 +2162,8 @@ ul.wp-block-list li{
     }
 }
 
-.text-section{
-    a{
+.text-section {
+    a {
         color: $red;
         font-size: var(--step-caption);
         text-decoration: underline;
@@ -2160,13 +2172,14 @@ ul.wp-block-list li{
         transition: text-decoration-color .33s ease, color .33s ease;
         width: fit-content;
     }
-    a:hover{
+
+    a:hover {
         text-decoration-color: $red;
     }
 }
 
-.sitemap{
-    a{
+.sitemap {
+    a {
         color: $red;
         font-size: var(--step-caption);
         text-decoration: underline;
@@ -2175,23 +2188,24 @@ ul.wp-block-list li{
         transition: text-decoration-color .33s ease, color .33s ease;
         width: fit-content;
     }
-    a:hover{
+
+    a:hover {
         text-decoration-color: $red;
     }
 
-    ul:not(.children){
+    ul:not(.children) {
         -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
 
-    @include media ("<tablet") {
-                -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
-            }
+        @include media ("<tablet") {
+            -webkit-column-count: 1;
+            -moz-column-count: 1;
+            column-count: 1;
+        }
     }
 }
 
-.item_img img{
+.item_img img {
     object-fit: cover;
 }
