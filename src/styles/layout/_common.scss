@@ -2359,3 +2359,104 @@ a.button-soldout{
     color: $black!important;
     pointer-events: none;
 }
+
+.stay-touch {
+    margin-top: var(--space-75p);
+    margin-bottom: var(--space-l-xl);
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-m-l);
+    }
+
+    &_text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-3xs-2xs);
+        text-align: center;
+
+        h2 {
+            font-size: var(--step-h3);
+        }
+
+        p {
+            font-size: var(--step-caption);
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: var(--space-s-m);
+        width: 50vw;
+
+        @include media ("<widescreen_x") {
+            width: 70vw;
+        }
+
+        @include media ("<tablet") {
+            width: 85vw;
+        }
+    }
+
+    .inputs-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: var(--space-xs-s);
+        column-gap: var(--space-s-m);
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            row-gap: var(--space-3xs-2xs);
+            width: 48%;
+
+            @include media ("<tablet") {
+                width: 100%;
+            }
+
+            input {
+                background: transparent;
+                border: 1px solid #D7D7D7;
+                border-radius: 0px;
+                font-size: var(--step-caption);
+                line-height: 1.35;
+                min-height: clamp(3.125rem, 3.0147rem + 0.4706vi, 3.75rem);
+                padding-inline: var(--space-xs-s);
+                position: relative;
+                width: 100%;
+                transition: $animation-speed;
+
+                &:focus {
+                    border-color: $red;
+                    transition: $animation-speed;
+                }
+            }
+        }
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        text-transform: uppercase;
+        font-family: United Sans Cond;
+        font-size: 1rem;
+
+        span {
+            color: $red;
+        }
+    }
+
+    .btn {
+        @include media ("<tablet") {
+            width: 100%;
+        }
+    }
+}
