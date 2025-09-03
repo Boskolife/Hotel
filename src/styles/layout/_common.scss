@@ -538,6 +538,18 @@
         color: $white;
     }
 
+    .promo-group-caption {
+        display: grid;
+        grid-template-rows: 0fr;
+        margin-bottom: 0;
+        opacity: 0;
+        transition: all .3s ease;
+    }
+
+    .promo-group-caption-inner {
+        overflow: hidden;
+    }
+
     &_item {
         border-top: 1px solid #464646;
 
@@ -546,6 +558,11 @@
         }
 
         &.active {
+
+            .promo-group-caption {
+                grid-template-rows: 1fr;
+                opacity: 1;
+            }
 
             h2,
             p {
