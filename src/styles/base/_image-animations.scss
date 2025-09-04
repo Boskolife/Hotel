@@ -1,0 +1,45 @@
+.rellax {
+    will-change: transform;
+    transform: translateZ(0);
+
+    &-slow {
+        will-change: transform;
+        transform: translateZ(0);
+        overflow: hidden;
+        position: relative;
+
+        img {
+            height: 120%;
+        }
+    }
+}
+
+.hero_bg {
+    will-change: transform;
+    transform: translateZ(0);
+
+    img {
+        height: 109% !important;
+        object-fit: cover;
+        object-position: left top;
+    }
+}
+
+.content-components {
+    .rellax-slow {
+        img {
+            height: 103% !important;
+        }
+    }
+}
+
+.text-image_content {
+    .rellax-slow {
+        position: relative;
+        top: 3.5rem;
+    }
+}
+
+.animation-text > * {
+    transition: none;
+}
