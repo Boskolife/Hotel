@@ -96,6 +96,8 @@ $animation-speed: all .3s ease 0s;
     --space-logo-width: clamp(6.875rem, 6.0817rem + 3.3846vi, 10.3125rem);
     --space-button-height: 3.125rem;
     --space-footer-logo-width: clamp(5.625rem, 4.477rem + 4.898vi, 9.375rem);
+    --space-arrow-size: clamp(6px, 0.4167vw, 12px);
+    --space-pagination-button: clamp(40px, 2.5vw, 80px);
 }
 
 .pt-nav-height {

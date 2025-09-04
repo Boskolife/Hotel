@@ -1765,6 +1765,56 @@ body {
             }
         }
     }
+     &_pagination {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: var(--space-s-m);
+        margin-top: var(--space-xl);
+        @include media ("<phone") {
+            gap: var(--space-2xs);
+            margin-top: var(--step-body);
+        }
+        .pagination_button {
+            display: flex;
+            font-size: var(--step-caption);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: var(--space-pagination-button);
+            height: var(--space-pagination-button);
+            max-width: 100px;
+            max-height: 100px;
+            border: 1px solid $gray;
+            color: $black;
+            transition: $animation-speed;
+            svg {
+                width: var(--space-arrow-size);
+                height: auto;
+            }
+            &:hover, &:focus {
+                color: $white;
+                background-color: $black;
+                transition: $animation-speed;
+                border: 1px solid $black;
+                svg {
+                    path {
+                        fill: $white !important;
+                    }
+                }
+            }
+            img {
+                width: 20%;
+                height: 100%;
+            }
+            &.active {
+                color: $white;
+                background-color: $black;
+                transition: $animation-speed;
+                border: 1px solid $black;
+            }
+        }
+     }
 }
 
 .follow {
