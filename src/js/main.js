@@ -94,6 +94,9 @@ function initFilter() {
   const items = document.querySelectorAll('.filter_item');
   const filterButtons = document.querySelectorAll('.filter_buttons .filter_button');
   const pagination = document.querySelector('.articles_pagination');
+  if ( ! filterButtons.length ) {
+    return;
+  }
 
   let currentCategory = 'all';
   let currentPage = 1;
@@ -118,11 +121,13 @@ function initFilter() {
 
     // Scroll to top of items
     const el = document.querySelector('.filter_buttons');
-    const y = el.getBoundingClientRect().top + window.pageYOffset - 70;
-    window.scrollTo({
-        top: y,
-        behavior: 'smooth'
-    });
+    if ( !! el ) {
+      const y = el.getBoundingClientRect().top + window.pageYOffset - 70;
+      window.scrollTo({
+          top: y,
+          behavior: 'smooth'
+      });
+    }
 
     renderPagination(filtered.length);
   }
@@ -210,8 +215,6 @@ function initFilter() {
 
   renderItems(); 
 }
-
-initFilter();
 
 function initHeaderMenu() {
   const menuLinks = document.querySelectorAll('.header_menu .menu a');
