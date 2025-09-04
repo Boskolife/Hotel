@@ -2,6 +2,7 @@ import Swiper from 'swiper';
 import { Navigation, EffectCreative } from 'swiper/modules';
 
 window.addEventListener('load', () => {
+  initGalleryModules();
   ListenerResize();
   initFilter();
   initHeaderMenu();
@@ -237,3 +238,57 @@ function initPromoHover() {
   });
 }
 
+function initGalleryModules() {
+  if(!document.querySelector('.gallery-swiper')) {
+    return;
+  }
+
+  const swiper = new Swiper('.gallery-swiper', {
+    loop: true,
+    modules: [Navigation],
+    slidesPerView: 1,
+    allowTouchMove: false,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    navigation: {
+      nextEl: '.gallery-button-next',
+      prevEl: '.gallery-button-prev',
+    },
+  });
+
+  const modal = document.querySelector('.page-template-gallery-template .base-dialog');
+  const items = document.querySelectorAll('.gallery_container .gallery-item');
+  if (!items || !modal) return;
+
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const slideIndex = parseInt(item.dataset.index);
+      
+      if (!isNaN(slideIndex)) {
+        // Add a one-time event listener for transitionEnd
+        const onTransitionEnd = () => {
+          // Show the modal once slide transition finishes
+          modal.classList.add('show');
+    
+          // Remove this event listener after it fires once
+          swiper.off('transitionEnd', onTransitionEnd);
+        };
+    
+        swiper.on('transitionEnd', onTransitionEnd);
+        swiper.slideTo(slideIndex);
+      } else {
+        // fallback if no index found
+        modal.classList.add('show');
+      }
+    });
+  });
+
+  const closeBtn = modal.querySelector('.modal-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('show');
+    });
+  }
+}
