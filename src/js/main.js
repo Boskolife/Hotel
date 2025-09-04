@@ -93,31 +93,126 @@ function ListenerResize() {
 
 function initFilter() {
   const items = document.querySelectorAll('.filter_item');
-  const filterButtons = document.querySelectorAll(
-    '.filter_buttons .filter_button',
-  );
+  const filterButtons = document.querySelectorAll('.filter_buttons .filter_button');
+  const pagination = document.querySelector('.articles_pagination');
 
-  for (let button of filterButtons) {
-    button.addEventListener('click', () => {
-      //change button active state
-      for (let tabButton of filterButtons) {
-        tabButton.classList.remove('active');
-      }
+  let currentCategory = 'all';
+  let currentPage = 1;
+  const itemsPerPage = 6;
 
-      button.classList.add('active');
-
-      const category = button.dataset.category;
-
-      for (let item of items) {
-        if (item.dataset.category == category || category == 'all') {
-          item.style.display = '';
-        } else {
-          item.style.display = 'none';
-        }
-      }
+  function getFilteredItems() {
+    return Array.from(items).filter(item => {
+      return currentCategory === 'all' || item.dataset.category === currentCategory;
     });
   }
+
+  function renderItems() {
+    const filtered = getFilteredItems();
+
+    items.forEach(item => (item.style.display = 'none'));
+
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    filtered.slice(start, end).forEach(item => {
+      item.style.display = 'flex';
+    });
+
+    // Scroll to top of items
+    const el = document.querySelector('.filter_buttons');
+    const y = el.getBoundingClientRect().top + window.pageYOffset - 70;
+    window.scrollTo({
+        top: y,
+        behavior: 'smooth'
+    });
+
+    renderPagination(filtered.length);
+  }
+
+  function renderPagination(totalItems) {
+    pagination.innerHTML = ''; 
+
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    if (totalPages <= 1) return;
+
+    // prev button
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'pagination_button';
+    prevBtn.innerHTML = `<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.75781 9.25349L0.757812 5.25676L1.32924 4.68579L5.32924 8.68253L4.75781 9.25349Z" fill="#3C3C3C" />
+                            <path d="M5.32924 1.83146L1.32924 5.8282L0.757812 5.25724L4.75781 1.2605L5.32924 1.83146Z" fill="#3C3C3C" />
+                        </svg>`;
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderItems();
+      }
+    });
+    pagination.appendChild(prevBtn);
+
+    for (let i = 1; i <= totalPages; i++) {
+      if (
+        i === 1 ||
+        i === totalPages ||
+        (i >= currentPage - 1 && i <= currentPage + 1) ||
+        (currentPage === 1 && i <= 3) 
+      ) {
+        const btn = document.createElement('button');
+        btn.className = 'pagination_button';
+        btn.textContent = i;
+        if (i === currentPage) btn.classList.add('active');
+        btn.addEventListener('click', () => {
+          currentPage = i;
+          renderItems();
+        });
+        pagination.appendChild(btn);
+      } else if (
+        i === 2 && currentPage > 3 ||
+        i === totalPages - 1 && currentPage < totalPages - 2
+      ) {
+        // dots
+        const dots = document.createElement('button');
+        dots.className = 'pagination_button dots';
+        dots.textContent = '...';
+        dots.disabled = true;
+        pagination.appendChild(dots);
+      }
+    }
+
+    // next button
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'pagination_button';
+    nextBtn.innerHTML = '<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">\
+                            <path d="M1.24219 9.25349L5.24219 5.25676L4.67076 4.68579L0.670761 8.68253L1.24219 9.25349Z" fill="#3C3C3C" />\
+                            <path d="M0.670761 1.83146L4.67076 5.8282L5.24219 5.25724L1.24219 1.2605L0.670761 1.83146Z" fill="#3C3C3C" />\
+                        </svg>';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.addEventListener('click', () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderItems();
+      }
+    });
+    pagination.appendChild(nextBtn);
+  }
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      filterButtons.forEach(tabButton => tabButton.classList.remove('active'));
+      button.classList.add('active');
+
+      currentCategory = button.dataset.category;
+      currentPage = 1;
+      
+      renderItems();
+    
+    });
+  });
+
+  renderItems(); 
 }
+
+initFilter();
 
 function initHeaderMenu() {
   const menuLinks = document.querySelectorAll('.header_menu .menu a');
