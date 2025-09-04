@@ -1,16 +1,16 @@
 <section class="events events-type-2 calendar">
-    <div class="events_filter scroll-element">
-        <button type="button" class="filter_button active">All</button>
-        <button type="button" class="filter_button">Rooftop Lounge Events</button>
-        <button type="button" class="filter_button">Garage bar events</button>
-        <button type="button" class="filter_button">music</button>
-        <button type="button" class="filter_button">backyard sessions</button>
-        <button type="button" class="filter_button">Art</button>
+    <div class="events_filter scroll-element filter_buttons">
+        <button type="button" class="filter_button active" data-category="all">All</button>
+        <button type="button" class="filter_button" data-category="rooftop-lounge-events">Rooftop Lounge Events</button>
+        <button type="button" class="filter_button" data-category="garage-bar-events">Garage bar events</button>
+        <button type="button" class="filter_button" data-category="music">music</button>
+        <button type="button" class="filter_button" data-category="backyard-sessions">backyard sessions</button>
+        <button type="button" class="filter_button" data-category="art">Art</button>
     </div>
     <div class="container">
         <div class="events_wrap">
             <div class="events_contnet">
-                <div class="events_item">
+                <div class="events_item filter_item" data-category="rooftop-lounge-events">
                     <div class="item_date">
                         <p>Aug 14</p>
                     </div>
@@ -36,7 +36,7 @@
                         <img src="./images/content/content_2.webp" alt="image not found">
                     </a>
                 </div>
-                <div class="events_item">
+                <div class="events_item filter_item" data-category="art">
                     <div class="item_date">
                         <p>Aug 14</p>
                     </div>
@@ -60,7 +60,7 @@
                         <img src="./images/content/content_2.webp" alt="image not found">
                     </a>
                 </div>
-                <div class="events_item">
+                <div class="events_item filter_item" data-category="music">
                     <div class="item_date">
                         <p>Aug 14</p>
                     </div>
