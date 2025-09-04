@@ -109,7 +109,7 @@ function initFilter() {
 
       for (let item of items) {
         if (item.dataset.category == category || category == 'all') {
-          item.style.display = 'flex';
+          item.style.display = '';
         } else {
           item.style.display = 'none';
         }
