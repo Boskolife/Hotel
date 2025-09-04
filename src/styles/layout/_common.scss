@@ -178,6 +178,9 @@ body {
             font-size: var(--step-hero);
             color: $white;
             letter-spacing: 3px;
+            transition: transform 1s ease-out, opacity 1s ease-out;
+            transform: translateY(2rem);
+            opacity: 50;
             @include adaptive-value("margin-bottom", 20, 12, 1);
 
             @include media ("<tablet") {
@@ -190,6 +193,19 @@ body {
             @include adaptive-value("font-size", 22, 18, 1);
             line-height: calc(30 / 22);
             font-style: italic;
+
+            transition: .7s transform .2s ease-out, .7s opacity .2s ease-out;
+
+            opacity: 0;
+            transform: translateY(3rem);
+        }
+
+        h1,
+        p {
+            &.show {
+                transform: translateY(0);
+                opacity: 100;
+            }
         }
     }
 }
