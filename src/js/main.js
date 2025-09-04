@@ -114,26 +114,35 @@ function initFilter() {
 
     items.forEach(item => (item.style.display = 'none'));
 
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    filtered.slice(start, end).forEach(item => {
-      item.style.display = '';
-    });
+    if (pagination) {
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      filtered.slice(start, end).forEach(item => {
+        item.style.display = '';
+      });
+
+      renderPagination(filtered.length);
+    } else {
+      filtered.forEach(item => (item.style.display = ''));
+    }
 
     // Scroll to top of items
-    const el = document.querySelector('.filter_buttons');
-    if ( !! el ) {
-      const y = el.getBoundingClientRect().top + window.pageYOffset - 70;
-      window.scrollTo({
-          top: y,
-          behavior: 'smooth'
-      });
+    if (pagination) {
+        const el = document.querySelector('.filter_buttons');
+        if ( !! el ) {
+        const y = el.getBoundingClientRect().top + window.pageYOffset - 70;
+        window.scrollTo({
+            top: y,
+            behavior: 'smooth'
+        });
+        }
     }
 
     renderPagination(filtered.length);
   }
 
   function renderPagination(totalItems) {
+    if (!pagination) return; 
     pagination.innerHTML = ''; 
 
     const totalPages = Math.ceil(totalItems / itemsPerPage);
