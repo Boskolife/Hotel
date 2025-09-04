@@ -117,7 +117,7 @@ function initFilter() {
     const start = (currentPage - 1) * itemsPerPage;
     const end = start + itemsPerPage;
     filtered.slice(start, end).forEach(item => {
-      item.style.display = 'flex';
+      item.style.display = '';
     });
 
     // Scroll to top of items
