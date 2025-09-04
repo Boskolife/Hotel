@@ -5,6 +5,7 @@ window.addEventListener('load', () => {
   ListenerResize();
   RoomTabs();
   initHeaderMenu();
+  initPromoHover();
 });
 
 window.addEventListener('resize', () => {
@@ -91,13 +92,14 @@ function ListenerResize() {
 
 function RoomTabs() {
   const rooms = document.querySelectorAll('.rooms_item');
-  const roomTabButtons = document.querySelectorAll('.rooms_filter .filter_button');
+  const roomTabButtons = document.querySelectorAll(
+    '.rooms_filter .filter_button',
+  );
 
-  for(let button of roomTabButtons) {
+  for (let button of roomTabButtons) {
     button.addEventListener('click', () => {
-
       //change button active state
-      for(let tabButton of roomTabButtons){
+      for (let tabButton of roomTabButtons) {
         tabButton.classList.remove('active');
       }
 
@@ -106,12 +108,10 @@ function RoomTabs() {
       //show/hide rooms
       const type = button.innerText;
       console.log(button.innerText);
-      for(let room of rooms) {
-        
+      for (let room of rooms) {
         if (room.dataset.type == type || type == 'All') {
           room.style.display = 'flex';
-        }
-        else {
+        } else {
           room.style.display = 'none';
         }
       }
@@ -188,6 +188,7 @@ function initHeaderMenu() {
 }
 
 
+
 const select = document.querySelector(".form-select");
   const selected = select.querySelector(".select-selected");
   const items = select.querySelector(".select-items");
@@ -209,3 +210,21 @@ const select = document.querySelector(".form-select");
       items.classList.remove("show");
     }
   });
+
+function initPromoHover() {
+  const items = document.querySelectorAll('.promo_item');
+  const images = document.querySelectorAll('.promo_image_group .promo_img');
+
+  if (!items.length || !images.length) return;
+
+  items.forEach((item, index) => {
+    item.addEventListener('mouseenter', () => {
+      items.forEach((el) => el.classList.remove('active'));
+      images.forEach((img) => img.classList.remove('active'));
+
+      item.classList.add('active');
+      images[index].classList.add('active');
+    });
+  });
+}
+
