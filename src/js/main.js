@@ -313,7 +313,8 @@ const select = document.querySelector(".form-select");
   
 
   document.addEventListener("click", (e) => {
-    if (!select.contains(e.target)) {
+
+    if ( select && ! select.contains( e.target ) ) {
       items.classList.remove("show");
     }
   });
