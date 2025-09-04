@@ -2037,7 +2037,6 @@ body {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: var(--space-75p);
         position: relative;
-        overflow: hidden;
 
         &_left_column {
             padding-top: var(--space-75p);
@@ -2063,7 +2062,6 @@ body {
         &_date {
             font-size: var(--step-caption);
         }
-
         @include media ("<tablet") {
             grid-template-columns: repeat(1, minmax(0, 1fr));
 
@@ -2284,9 +2282,10 @@ body {
 }
 
 .no-line-divider-wrap {
-    position: relative;
+    position: absolute;
     width: 100vw !important;
     left: calc(var(--space-10p) * -1);
+    bottom: 5%;
 
     .divider {
         display: block;
