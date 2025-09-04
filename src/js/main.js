@@ -3,7 +3,7 @@ import { Navigation, EffectCreative } from 'swiper/modules';
 
 window.addEventListener('load', () => {
   ListenerResize();
-  RoomTabs();
+  initFilter();
   initHeaderMenu();
   initPromoHover();
 });
@@ -90,34 +90,34 @@ function ListenerResize() {
   });
 }
 
-function RoomTabs() {
-  const rooms = document.querySelectorAll('.rooms_item');
-  const roomTabButtons = document.querySelectorAll(
-    '.rooms_filter .filter_button',
+function initFilter() {
+  const items = document.querySelectorAll('.filter_item');
+  const filterButtons = document.querySelectorAll(
+    '.filter_buttons .filter_button',
   );
 
-  for (let button of roomTabButtons) {
+  for (let button of filterButtons) {
     button.addEventListener('click', () => {
       //change button active state
-      for (let tabButton of roomTabButtons) {
+      for (let tabButton of filterButtons) {
         tabButton.classList.remove('active');
       }
 
       button.classList.add('active');
 
-      //show/hide rooms
-      const type = button.innerText;
-      console.log(button.innerText);
-      for (let room of rooms) {
-        if (room.dataset.type == type || type == 'All') {
-          room.style.display = 'flex';
+      const category = button.dataset.category;
+
+      for (let item of items) {
+        if (item.dataset.category == category || category == 'all') {
+          item.style.display = 'flex';
         } else {
-          room.style.display = 'none';
+          item.style.display = 'none';
         }
       }
     });
   }
 }
+
 function initHeaderMenu() {
   const menuLinks = document.querySelectorAll('.header_menu .menu a');
   const subMenus = document.querySelectorAll('.sub-menu');
